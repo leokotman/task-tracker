@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Food shopping",
+      "date": "Sat 09.04, 12:00",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Call Jes",
+      "date": "Sat 09.04, 11:00",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Practice React",
+      "date": "Sun 10.04, 12:00",
+      "reminder": false
+    },
+    {
+      "id": 4,
+      "text": "Do gardening",
+      "date": "Sun 10.04, 14:00",
+      "reminder": false
+    }
+  ]
+}
