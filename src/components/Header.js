@@ -3,15 +3,11 @@ import React from "react";
 
 import Button from "./Button";
 
-const Header = ({ title }) => {
-  const click = () => {
-    console.log('click');
-  }
-
+const Header = ({ title, onClickAdd, showAdd }) => {
   return (
     <header className="header">
       <h1>{title}</h1>
-      <Button text="Add" color="blue" onClick={click}/>
+      <Button text={showAdd ? "Close" : "Add"} color={showAdd ? "crimson" : "turquoise"} onClick={onClickAdd}/>
     </header>
   );
 };

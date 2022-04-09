@@ -32,6 +32,7 @@ function App() {
       reminder: false,
     },
   ]);
+  const [showAddTask, setShowAddTask] = useState(false);
 
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
@@ -44,12 +45,18 @@ function App() {
         return task;
       }
     }))
+  };
+  const addTask = (task) => {
+    // console.log(task);
+    const id = tasks.length + 1;
+    const newTask = {id, ...task};
+    setTasks([...tasks, newTask]);
   }
 
   return (
     <div className="container">
-      <Header />
-      <AddTask />
+      <Header onClickAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ?
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       : <p>No tasks</p>}
