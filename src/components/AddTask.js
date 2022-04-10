@@ -2,22 +2,22 @@ import { useState } from 'react';
 
 const AddTask = ({onAdd}) => {
   const [text, setText] = useState('');
-  const [day, setDay] = useState('');
+  const [date, setDate] = useState('');
   const [reminder, setReminder] = useState(false);
 
   const addTask = (e) => {
     e.preventDefault();
     
-    if(!text || !day) {
-      alert('Please add task + day correctly');
+    if(!text || !date) {
+      alert('Please add task + date correctly');
       return;
     }
-    onAdd({text, day, reminder});
+    onAdd({text, date, reminder});
     clearForm();
   };
   const clearForm = () => {
     setText('');
-    setDay('');
+    setDate('');
     setReminder(false);
   }
 
@@ -28,8 +28,8 @@ const AddTask = ({onAdd}) => {
         <input type="text" placeholder="Add Task" value={text} onChange={(e) => setText(e.target.value)} />
       </div>
       <div className="form-control">
-        <label>Day & time</label>
-        <input type="text" placeholder="Add Day & time" value={day} onChange={(e) => setDay(e.target.value)}/>
+        <label>Date & time</label>
+        <input type="text" placeholder="Add Date & time" value={date} onChange={(e) => setDate(e.target.value)}/>
       </div>
       <div className="form-control form-control-check" >
         <label>Set reminder</label>
